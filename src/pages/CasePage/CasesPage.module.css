@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo');
+
+/* Основные переменные */
+:root {
+  --bg-color: #20272F;
+}
+
+/* Фон всей страницы */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #20272F;;
+  font-family: 'SF Pro Text', sans-serif;
+  color: var(--text-color);
+}
+
+/* Шрифты для заголовков и звезд */
+.caseTitle,
+.caseStars {
+  font-family: 'Arvo', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+/* Анимация Lottie */
+.lottieAnimation {
+  width: 100px;
+  display: block;  
+  margin-bottom: 20px;
+  padding-top: 8px;
+}
+
+/* Заголовок */
+.HeadText {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Inter, sans-serif;
+}
+
+/* Сетка карточек */
+.casesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 24px;
+  padding: 24px;
+  justify-items: center;
+  justify-content: center;
+  max-width: 520px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+  background: #20272F; /* темный фон */
+}
+
+/* Карточка */
+.caseCard {
+  width: 140px;
+  border-radius: 16px;
+  background: #3E4C5B;
+  padding: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.5s ease both;
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Контент внутри карточки */
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background: #3E4C5B;
+  border-radius: 12px;
+  width: 100%;
+}
+
+/* Изображение */
+.caseImage {
+  width: 120px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Название */
+.caseTitle {
+  font-size: 15px;
+  margin: 6px 0 10px;
+  color: var(--tg-theme-text-color);
+}
+
+/* Стоимость */
+.caseStars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4c3324f;
+  padding: 6px 10px;
+  border-radius: 15px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #fca625;
+  margin-top: 6px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.caseStars:hover {
+  transform: scale(1.05);
+}
+
+.caseStars img {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+}
+
+/* Заблокированные карточки */
+.disabledCard {
+  pointer-events: none;
+  opacity: 0.5;
+  filter: grayscale(80%);
+  cursor: not-allowed;
+}
+
+/* Новая лента */
+.newTapeContainer {
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+}
+
+.newTape {
+  width: 100%;
+  height: 100%;
+  transform: rotate(15deg);
+}
+
+.newTapeText {
+  position: absolute;
+  top: 42%;
+  left: 62%;
+  transform: translate(-50%, -50%) rotate(61deg);
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Inter, sans-serif;
+}

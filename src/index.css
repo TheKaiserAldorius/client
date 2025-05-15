@@ -1,0 +1,47 @@
+:root {
+  --bg-color: #20272F;
+  --text-color: var(--tg-theme-text-color);
+  --subtext-color: var(--tg-theme-hint-color);
+  --accent-color: var(--tg-theme-link-color);
+  --header-color: var(--tg-theme-secondary-bg-color);
+  --nav-color: var(--tg-theme-secondary-bg-color);
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* убираем скрытие, чтобы внутренние блоки могли скроллиться */
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* сам контейнер не скроллится */
+}
+
+/* Главная область для скролла */
+.page,
+.main-content {
+  flex: 1;
+  height: 0; /* важно для корректного flex-скролла */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* плавность на iOS */
+}
+
+/* Прячем webkit-скроллбар */
+.page::-webkit-scrollbar,
+.main-content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Прячем в Firefox и IE/Edge */
+.page,
+.main-content {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE 10+ */
+}

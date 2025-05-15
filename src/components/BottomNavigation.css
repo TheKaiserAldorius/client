@@ -1,0 +1,41 @@
+/* src/components/BottomNavigation.css */
+.bottom-navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #20272F;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #4C5B6C;
+  z-index: 1000;
+  user-select: none;
+  padding-bottom: 38px; /* 🔥 добавлен отступ от нижнего края */
+}
+
+.bottom-navigation button {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #4C5B6C;
+  font-size: 12px;
+  padding: 0;
+}
+
+.bottom-navigation .nav-icon {
+  width: 25px;
+  height: 25px;
+}
+
+.bottom-navigation button.active {
+  color: #69AFFF;
+}
+
+.bottom-navigation button.active .nav-icon {
+  filter: brightness(0) saturate(100%) invert(46%) sepia(99%)
+          saturate(3457%) hue-rotate(173deg) brightness(103%) contrast(102%);
+}

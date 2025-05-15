@@ -1,0 +1,42 @@
+/* src/pages/IndexPage.module.css */
+@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
+
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 73px;
+  background: #20272F;;
+  border-top: 1px solid var(--tg-theme-background-color);
+  display: flex;
+  z-index: 1000;
+}
+
+.banner {
+  position: fixed;
+  bottom: 73px;
+  left: 0;
+  width: 100%;
+  background-color: var(--tg-theme-secondary-background-color);
+  color: var(--tg-theme-text-color);
+  font-family: 'Arvo', sans-serif;
+  padding: 10px 0;
+  font-size: 14px;
+  text-align: center;
+  z-index: 999;
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--tg-theme-background-color);
+  font-weight: bold;
+}
+
+.bannerLink {
+  color: var(--tg-theme-link-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.username {
+  color: var(--tg-theme-link-color);
+  font-weight: 600;
+}

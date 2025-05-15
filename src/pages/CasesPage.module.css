@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo&display=swap');
+
+:root {
+  --bg-color: #20272F;
+}
+
+.lottieWrapper {
+  position: relative;
+  margin: 0 auto 20px;
+}
+
+.lottieBackground {
+  position: absolute;
+  inset: 0;
+  background: #20272F; /* вместо var(--tg-theme-secondary-background-color) */
+  filter: blur(20px);
+  z-index: 0;
+}
+
+.lottieAnimation {
+  position: relative;
+  width: 100px;
+  z-index: 1;
+}
+
+.HeadText {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--tg-theme-text-color);
+  margin-bottom: 16px;
+}
+
+.casesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 24px;
+  padding: 0 24px 80px;
+}
+
+.caseCard {
+  background: #20272F; /* фон карточки теперь тот же, что и общий */
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.caseCard:hover {
+  transform: translateY(-4px);
+}
+
+.disabledCard {
+  opacity: 0.5;
+  filter: grayscale(80%);
+  pointer-events: none;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

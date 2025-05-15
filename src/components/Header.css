@@ -1,0 +1,115 @@
+.header {
+  position: fixed;
+  top: 10x;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* 🔥 Прижать содержимое вниз */
+  padding: 0 16px 12px;   /* 🔥 Отступ только снизу */
+  background-color: #20272F;
+  color: #FFFFFF;
+  border-bottom: 1px solid #4C5B6C;
+  user-select: none;
+  -webkit-user-drag: none;
+
+  height: 132px;
+}
+
+
+.header__user {
+  display: flex;
+  align-items: center;
+   gap: 14px; 
+}
+
+.header__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #333348;
+  margin-right: 22px; /* 🔥 отступ от текста */
+}
+
+.header__avatar.placeholder {
+  background-color: #27333F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.header__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header__name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #FFFFFF;
+  margin-bottom: 2px; /* 🔥 чуть ближе к подзаголовку */
+}
+
+.header__sub {
+  font-size: 14px;
+  color: #B0B6BE;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  background-color: #27333F;
+  border-radius: 9999px;
+  padding: 6px 10px;
+  gap: 8px;
+}
+
+.header__balance {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+}
+
+.header__star-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+}
+
+.header__topup-btn {
+  background-color: #28A8F8;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+
+  /* iOS фикс */
+  line-height: 0; /* ⬅️ ключевая строка */
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.header__topup-btn:hover {
+  background-color: #4CC0FF;
+}

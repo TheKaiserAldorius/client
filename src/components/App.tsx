@@ -11,6 +11,7 @@ import { HistoryPage } from '@/pages/HistoryPage';
 import { LeaderboardPage } from '@/pages/LeaderboardPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 
+
 export const App: React.FC = () => {
   const lp = useLaunchParams();
   const isDark = useSignal(miniApp.isDark);

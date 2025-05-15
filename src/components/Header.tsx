@@ -8,13 +8,14 @@ import { ModalClose } from "@telegram-apps/telegram-ui/dist/components/Overlays/
 import { X } from "lucide-react";
 
 import starIcon from '../../assets/buttonsicons/StarTg.png';
-import { useStars } from '@/hooks/useStars';
 import { useLanguage } from '@/components/LanguageContext';
 import { useProfileDeposit } from '@/hooks/useProfileDeposit';
+import { useStarsContext } from '@/components/StarsContext';
+
 import './Header.css';
 
 export const Header: React.FC = () => {
-  const { stars, refetchStars } = useStars();
+  const { stars } = useStarsContext(); // ⚡️ читаем звезды из контекста
   const { language } = useLanguage();
   const initDataState = useSignal(initData.state);
   const { platform } = useLaunchParams();
@@ -40,7 +41,7 @@ export const Header: React.FC = () => {
       });
       return;
     }
-    handleDeposit(parsedAmount, refetchStars);
+    handleDeposit(parsedAmount, () => {}); // здесь refetch не нужен — stars обновятся из ProfilePage
     setAmount('');
   };
 
@@ -73,16 +74,13 @@ export const Header: React.FC = () => {
           {stars ?? 0}
         </div>
 
-        {/* 💸 Кнопка пополнения в модалке */}
         <Modal
           header={
             <ModalHeader after={<ModalClose><X /></ModalClose>}>
               {language === 'ru' ? 'Пополнение баланса' : 'Top Up Balance'}
             </ModalHeader>
           }
-          trigger={
-            <button className="header__topup-btn">+</button>
-          }
+          trigger={<button className="header__topup-btn">+</button>}
         >
           <Placeholder
             description={language === 'ru'
